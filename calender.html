@@ -28,15 +28,7 @@
             perspective: 1200px;
         }
 
-        .hanging-plants {
-            position: absolute;
-            top: -80px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 80px;
-            background: url('https://i.imgur.com/6YQKiHo.png') center/cover no-repeat;
-        }
+        
 
         .calendar {
             position: absolute;
@@ -265,7 +257,7 @@
 
 
     <script>
-        let offset = 0;
+        let offset = -1;
         let maxDays = 7;
     
         document.addEventListener("DOMContentLoaded", function () {
