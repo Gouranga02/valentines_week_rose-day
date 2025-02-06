@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Rose Day</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <header>
+        <nav>
+            <ul>
+                <li>1st Day Of The Valentines Week</li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+        header {
+            background-color: #890547;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+        }
+    </style>
+    <style>
+        /* General Styles */
+        body {
+            background-color: rgb(255, 255, 255);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 0.5s ease-in-out 0.2s forwards;
+        }
+
+        .container img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 0.5s ease-in-out 0.4s forwards;
+        }
+
+        .title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 48px;
+            color: #ff1493;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 0.5s ease-in-out 0.6s forwards;
+        }
+
+        .long-description {
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+            font-style: italic;
+            color: #ff69b4;
+            margin-top: 20px;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 0.5s ease-in-out 0.8s forwards;
+        }
+
+      /* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Slide-left animation */
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Slide-right animation */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.image-gallery {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    opacity: 0; /* Start with opacity 0 for fade-in animation */
+    animation: fadeIn 0.5s ease-in-out 1s forwards;
+}
+
+.collage {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+    position: relative;
+    transition: transform 0.5s ease-in-out; /* Smooth transition for slide effect */
+}
+
+.collage img {
+    width: 45%;
+    max-width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid white;
+    opacity: 0; /* Start with opacity 0 for fade-in animation */
+    animation: fadeIn 0.5s ease-in-out 1.2s forwards;
+}
+
+/* Collage text fade-in */
+.collage-text {
+    font-family: 'Dancing Script', cursive;
+    font-size: 24px;
+    color: #ac075a;
+    font-style: italic;
+    margin-top: 10px;
+    opacity: 0; /* Start with opacity 0 for fade-in animation */
+    animation: fadeIn 1s ease-in-out 1.4s forwards;
+}
+
+/* Rose message fade-in */
+.rose-message {
+    font-family: 'Dancing Script', cursive;
+    font-size: 20px;
+    color: #ff69b4;
+    font-style: italic;
+    margin-top: 10px;
+    opacity: 0; /* Start with opacity 0 for fade-in animation */
+    animation: fadeIn 1s ease-in-out 1.6s forwards;
+}
+
+/* Arrow fade-in */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 50px;
+    color: #ff1493;
+    z-index: 4;
+    cursor: pointer;
+    opacity: 0; /* Start with opacity 0 for fade-in animation */
+    animation: fadeIn 0.5s ease-in-out 1.8s forwards;
+}
+
+/* Left and right arrow positioning */
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right: 10px;
+}
+
+
+        .full-width-section {
+            position: relative;
+            width: 100%;
+            margin-top: 30px;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 0.5s ease-in-out 2s forwards;
+        }
+
+        .full-width-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .full-width-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+        }
+
+        /* Slide Animation */
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+
+        .slide-in {
+            animation: slideIn 0.5s ease-in-out forwards;
+        }
+
+        .slide-out {
+            animation: slideOut 0.5s ease-in-out forwards;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 36px;
+            }
+            .description, .long-description {
+                font-size: 18px;
+            }
+            .collage {
+                flex-direction: column;
+            }
+            .collage img {
+                width: 100%;
+                height: 100%;
+                max-width: 200px;
+            }
+            .arrow {
+                font-size: 40px;
+            }
+            .full-width-text {
+                font-size: 18px;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/7xm.xyz408817.jpg" alt="Rose Image">
+        <h1 class="title">Happy Rose Day My Love 💖</h1>
+        <p class="long-description">🌹 Roses are a symbol of love and passion. On this special day, I want to remind you how much you mean to me. Your smile lights up my world, and your presence makes everything better. Happy Rose Day, my love! 🌹</p>
+        <audio id="background-music" autoplay loop muted>
+            <source src="song1.mp3" type="audio/mpeg">
+        </audio>
+        
+        <!-- Styled Play/Pause Button -->
+        <button id="play-button" onclick="toggleMusic()">
+            <i id="play-icon" class="fa fa-play"></i>
+
+        </button>
+        <hr>
+        <!-- Add FontAwesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <div class="image-gallery">
+            <span class="arrow arrow-left" onclick="moveSlide(-1)">&#10094;</span>
+            
+            <div class="collage">
+                <img src="/Rose Day/images/red.jpg" alt="Rose 1" class="rose-image slide-in" id="rose-img">
+            </div>
+            
+            <span class="arrow arrow-right" onclick="moveSlide(1)">&#10095;</span>
+        </div>
+    
+        <p class="collage-text" id="rose-text">Rose 1</p>
+        <p class="rose-message" id="rose-message">Red Rose - The Color of Love ❤️</p>
+    
+        
+    </div>
+    <hr>
+    <div class="full-width-section" style="position: relative; width: 100%; height: auto; overflow: hidden;">
+        <img src="hand rose.jpg" alt="Beautiful Rose" class="full-width-image" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(50%);">
+        <div class="full-width-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; z-index: 1; padding: 20px; max-width: 90%; background: rgba(0, 0, 0, 0.5); border-radius: 10px;">
+            <h3 style="margin: 0; padding: 10px;">Love Blooms Like a Rose 🌹</h3>
+            <p style="margin: 0; padding: 10px;">Just like a rose, our love blossoms with each passing moment, spreading its fragrance in our lives. You are the most beautiful part of my journey. Happy Rose Day, my love! 💖</p>
+        </div>
+    </div>
+    <style>
+        .rose-petal {
+            position: absolute;
+            top: -50px;
+            width: 30px;
+            height: 30px;
+            background-image: url('rosepallet.png'); /* Replace with your petal image path */
+            background-size: cover;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        
+    </style>
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            createCongratulationAnimation();
+        });
+
+        function createCongratulationAnimation() {
+            const confettiContainer = document.createElement('div');
+            confettiContainer.style.position = 'fixed';
+            confettiContainer.style.top = '0';
+            confettiContainer.style.left = '0';
+            confettiContainer.style.width = '100%';
+            confettiContainer.style.height = '100%';
+            confettiContainer.style.pointerEvents = 'none';
+            document.body.appendChild(confettiContainer);
+
+            for (let i = 0; i < 20; i++) {
+                const confetti = document.createElement('img');
+                confetti.src = 'rosepallet.png'; // Path to your plaat image
+                confetti.style.position = 'absolute';
+                confetti.style.top = Math.random() * -50 + 'vh'; // Start slightly above the screen
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.width = Math.random() * 15 + 10 + 'px'; // Decreased size
+                confetti.style.height = 'auto'; // Maintain aspect ratio
+                confetti.style.opacity = Math.random();
+                confetti.style.animation = 'confetti 3s linear infinite'; // 3 seconds animation
+                confettiContainer.appendChild(confetti);
+            }
+
+            setTimeout(() => {
+                document.body.removeChild(confettiContainer);
+            }, 3000); // Remove confetti after animation completes
+        }
+
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes confetti {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+    <script>
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.classList.add('rose-petal');
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(petal);
+
+            setTimeout(() => {
+                petal.remove();
+            }, 5000);
+        }
+
+        setInterval(createPetal, 300);
+    </script>
+    <style>
+        #play-button {
+            background-color: transparent; /* No background */
+            color: #c3b4b4; /* White icon */
+            border: none; /* Remove border */
+            padding: 15px; /* Padding for the button */
+            text-align: center; /* Center-align icon */
+            font-size: 30px; /* Font size for the icon */
+            margin: 10px auto; /* Center button horizontally */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 50%; /* Rounded button */
+            transition: background-color 0.3s ease; /* Smooth background color transition */
+        }
+    
+        #play-button:hover {
+            background-color: rgba(0, 0, 0, 0.2); /* Light background on hover */
+        }
+    
+        #play-button:focus {
+            outline: none; /* Remove outline on focus */
+        }
+    
+        .fa-play, .fa-pause {
+            font-size: 30px; /* Set icon size */
+        }
+    </style>
+    
+    <script>
+        // Try to play the audio when the page loads
+        window.onload = function() {
+            const audioElement = document.getElementById('background-music');
+    
+            // Try to play the audio
+            audioElement.play().catch(function(error) {
+                // If autoplay fails, display the play button for user interaction
+                console.log('Autoplay failed:', error);
+                document.getElementById('play-button').style.display = 'block'; // Show the button
+            });
+        };
+    
+        // Function to toggle music (play/pause)
+        function toggleMusic() {
+            const audioElement = document.getElementById('background-music');
+            const playIcon = document.getElementById('play-icon');
+            
+            if (audioElement.paused) {
+                audioElement.muted = false; // Unmute the audio
+                audioElement.play();
+                playIcon.classList.remove('fa-play');
+                playIcon.classList.add('fa-pause');
+            } else {
+                audioElement.pause();
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
+            }
+        }
+    </script>
+    <script>
+        const roses = [
+            { 
+                rose: 'red.jpg', 
+                text: 'Red Rose - The Color of Love ❤️', 
+                message: 'Red roses symbolize deep love and passion. Just like my love for you, it’s strong, endless, and full of warmth. You are the love of my life, and this red rose is a reminder of that!' 
+            },
+            { 
+                rose: 'pink.jpg', 
+                text: 'Pink Rose - A Token of Admiration 💖', 
+                message: 'Pink roses represent gratitude and admiration. I admire your kindness, your beauty, and the way you make everything around you shine. This pink rose is to thank you for being the most wonderful person in my life!' 
+            },
+            { 
+                rose: 'white.jpg', 
+                text: 'White Rose - My Pure Love for You 🤍', 
+                message: 'White roses symbolize purity and sincerity. My love for you is pure, genuine, and forever. This white rose is a promise that my heart belongs only to you!' 
+            },
+            { 
+                rose: 'yellow.jpg', 
+                text: 'Yellow Rose - My Sunshine ☀️', 
+                message: 'Yellow roses symbolize joy and friendship. You are my happiness, my sunshine, and my best friend. Just like this yellow rose, you bring warmth and laughter into my life every day!' 
+            },
+            { 
+                rose: 'blue.jpg', 
+                text: 'Blue Rose - A Love as Unique as You 💙', 
+                message: 'Blue roses represent mystery and uniqueness. You are one of a kind, and my love for you is just as special and rare. This blue rose is a symbol of how extraordinary you are to me!' 
+            },
+            { 
+                rose: 'purple.jpg', 
+                text: 'Purple Rose - My Love at First Sight 💜', 
+                message: 'Purple roses symbolize enchantment and love at first sight. From the moment I saw you, I knew you were special. This purple rose is a reminder of how magical you are to me!' 
+            },
+            { 
+                rose: 'orange.jpg', 
+                text: 'Orange Rose - My Burning Desire for You 🔥', 
+                message: 'Orange roses represent passion and energy. My love for you is fiery and full of excitement. This orange rose shows how much you ignite my heart every single day!' 
+            },
+            { 
+                rose: 'geay.jpg', 
+                text: 'Gray Rose - My Timeless Love ⏳', 
+                message: 'Gray roses symbolize mystery and depth. My love for you goes beyond time and space. This gray rose is a reminder that no matter what happens, my love for you will never fade!' 
+            },
+            { 
+                rose: 'green.jpg', 
+                text: 'Green Rose - A Love That Grows 🌿', 
+                message: 'Green roses represent growth and harmony. Every day, my love for you grows stronger, just like this green rose. You are the reason my heart feels alive and refreshed!' 
+            },
+            { 
+                rose: 'violate.jpg', 
+                text: 'Violet Rose - My Deepest Devotion 💜', 
+                message: 'Violet roses symbolize deep admiration and elegance. You are the most beautiful and graceful person I know, and my devotion to you is eternal. This violet rose is a symbol of my forever love!' 
+            }
+        ];
+
+        let currentIndex = 0;
+
+        function updateGallery() {
+            const roseImg = document.getElementById("rose-img");
+            const roseText = document.getElementById("rose-text");
+            const roseMessage = document.getElementById("rose-message");
+
+            // Slide out animation
+            roseImg.classList.remove("slide-in");
+            roseImg.classList.add("slide-out");
+
+            setTimeout(() => {
+                roseImg.src = roses[currentIndex].rose;
+                roseText.textContent = roses[currentIndex].text;
+                roseMessage.textContent = roses[currentIndex].message;
+
+                // Slide in animation
+                roseImg.classList.remove("slide-out");
+                roseImg.classList.add("slide-in");
+            }, 500); // Match the duration of slide-out animation
+        }
+
+        function moveSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = roses.length - 1;
+            }
+            if (currentIndex >= roses.length) {
+                currentIndex = 0;
+            }
+            updateGallery();
+        }
+
+        updateGallery();
+    </script>
+    <footer style="background-color: #890547; color: white; text-align: center; padding: 10px 0; font-family: 'Dancing Script', cursive; font-size: 18px; margin-top: 20px;">
+        Design and developed by Gouranga Pal ❤️
+    </footer>
+</body>
+</html>

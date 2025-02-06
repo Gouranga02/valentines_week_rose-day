@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish Flip Calendar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('/download.jpeg') center/cover no-repeat;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .calendar-container {
+            position: relative;
+            width: 280px;
+            height: 320px;
+            cursor: pointer;
+            perspective: 1200px;
+        }
+
+        .hanging-plants {
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 80px;
+            background: url('https://i.imgur.com/6YQKiHo.png') center/cover no-repeat;
+        }
+
+        .calendar {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .springs {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .spring {
+            width: 14px;
+            height: 22px;
+            background: linear-gradient(135deg, silver, gray);
+            border-radius: 6px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .calendar-header {
+            background: #E53935;
+            color: white;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: bold;
+            border-bottom: 5px solid #B71C1C;
+            position: relative;
+            font-family: 'Pacifico', cursive; /* Changed font for header */
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 15px;
+            font-size: 24px;
+            color: #E53935;
+            cursor: pointer;
+            user-select: none;
+            padding: 0 20px;
+        }
+
+        #prevBtn {
+            left: 10px;
+        }
+
+        #nextBtn {
+            right: 10px;
+        }
+
+        .calendar-body {
+            padding: 30px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 80px; /* Increased font size for date */
+            margin: 10px 0;
+            font-family: 'Lobster', cursive;
+            color: black;
+        }
+
+        .torn {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            transform-origin: top;
+            animation: fall 0.8s ease-in-out forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: rotateX(0deg) translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: rotateX(120deg) translateY(500px);
+                opacity: 0;
+            }
+        }
+
+        .leaves {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: url('https://i.imgur.com/3U4E9wx.png') center/cover no-repeat;
+            animation: fallLeaf 5s linear infinite;
+        }
+
+        @keyframes fallLeaf {
+            0% {
+                transform: translateY(0) rotate(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+        .proceed-btn {
+            display: none;
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 18px;
+            background: #28A745;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            font-family: 'Roboto', sans-serif;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .proceed-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .new-btn {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 18px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+            font-family: 'Roboto', sans-serif;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .new-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .valentine-text {
+            display: none;
+            font-size: 18px;
+            color: #E53935;
+            font-family: 'Pacifico', cursive;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .calendar-container {
+                width: 240px;
+                height: 280px;
+            }
+            .hanging-plants {
+                width: 180px;
+                height: 70px;
+            }
+            h1 {
+                font-size: 60px;
+            }
+            .calendar-body {
+                padding: 20px;
+                font-size: 18px;
+            }
+            .proceed-btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+            .new-btn {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="leaves"></div>
+
+    <div class="calendar-container" onclick="tearPage()">
+        <div class="hanging-plants"></div>
+
+        <div class="springs">
+            <div class="spring"></div>
+            <div class="spring"></div>
+            <div class="spring"></div>
+        </div>
+
+        <div class="calendar" id="calendar">
+            <div class="calendar-header">
+                <span class="nav-btn" id="prevBtn" onclick="navigate(-1)">&lt;</span>
+                <span id="month" style="font-family: 'Pacifico', cursive;"></span>
+                <span class="nav-btn" id="nextBtn" onclick="navigate(1)">&gt;</span>
+            </div>
+            <div class="calendar-body">
+                <span id="day" style="font-family: 'Pacifico', cursive;"></span>
+                <h1 id="date"></h1>
+                <span id="year" style="font-family: 'Lobster', cursive;"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="valentine-text" id="valentineText">It's Valentine's Week ✨</div>
+    <button class="new-btn" id="newBtn" onclick="newAction()" style="font-family: 'Roboto', sans-serif; font-size: 18px; font-weight: bold; color: #fff; background-color: #007bff; padding: 10px 20px; border-radius: 5px; border: none; cursor: pointer; transition: background-color 0.3s ease;">Why Today is so Special?</button>
+
+
+    <script>
+        let offset = 0;
+        let maxDays = 7;
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            updateCalendar();
+            generateLeaves();
+        });
+    
+        function updateCalendar() {
+            const today = new Date();
+            today.setDate(today.getDate() + offset);
+    
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August",
+                "September", "October", "November", "December"];
+            const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    
+            const displayedDate = today.getDate();  // This is the date displayed on the calendar
+            document.getElementById("month").innerText = months[today.getMonth()].toUpperCase();
+            document.getElementById("day").innerText = days[today.getDay()];
+            document.getElementById("date").innerText = displayedDate;
+            document.getElementById("year").innerText = today.getFullYear();
+    
+            // Display "Valentine's Week" text and show button between 7 and 14
+            if (displayedDate >= 7 && displayedDate <= 14) {
+                document.getElementById("valentineText").style.display = "block";
+                document.getElementById("newBtn").style.display = "block";
+            } else {
+                document.getElementById("valentineText").style.display = "none";
+                document.getElementById("newBtn").style.display = "none";
+            }
+        }
+    
+        function tearPage() {
+            if (offset >= maxDays) return;
+    
+            let oldCalendar = document.getElementById("calendar");
+            let tornPage = oldCalendar.cloneNode(true);
+            tornPage.classList.add("torn");
+            oldCalendar.parentNode.insertBefore(tornPage, oldCalendar);
+    
+            setTimeout(() => {
+                tornPage.remove();
+                offset++;
+                updateCalendar();
+    
+                if (offset >= 5) {
+                    document.getElementById("proceedBtn").style.display = "block";
+                }
+            }, 800);
+        }
+    
+        function proceed() {
+            alert("Proceeding to the next step...");
+        }
+    
+        function newAction() {
+        const displayedDate = parseInt(document.getElementById("date").innerText);  // Get the calendar's displayed date
+        if (displayedDate === 7) {
+            window.location.href = "roseday.html";  // Redirect to roseday.html when the calendar date is 7
+        } else if (displayedDate === 8) {
+            window.location.href = "proposeday.html";  // Redirect to proposeday.html when the calendar date is 8
+        } else {
+            alert("New button clicked! The calendar date is not 7 or 8.");
+        }
+    }
+    
+        function navigate(direction) {
+            offset += direction;
+            updateCalendar();
+        }
+    </script>
+    
