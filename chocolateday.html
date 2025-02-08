@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Chocolate Day</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <header>
+        <nav>
+            <ul>
+                <li>3rd Day Of The Valentines Week</li>
+            </ul>
+        </nav>
+    </header>
+    <style>
+        header {
+            background-color: #6b4423; /* Chocolate brown */
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+        }
+    </style>
+    <style>
+        /* General Styles */
+        html, body {
+    background-color: rgb(255, 255, 255);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    opacity: 0; /* Start with opacity 0 for fade-in animation */
+    animation: fadeIn 0.5s ease-in-out forwards;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: scroll; /* Enable vertical scrolling but hide scrollbar */
+}
+
+/* Hide scrollbar for all browsers */
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;  /* Hide scrollbar for IE & Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 0.5s ease-in-out 0.2s forwards;
+        }
+
+        .container img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 0.5s ease-in-out 0.4s forwards;
+        }
+
+        .title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 48px;
+            color: #6b4423; /* Chocolate brown */
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 0.5s ease-in-out 0.6s forwards;
+        }
+
+        .long-description {
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+            font-style: italic;
+            color: #8b5a2b; /* Lighter chocolate brown */
+            margin-top: 20px;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 0.5s ease-in-out 0.8s forwards;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Slide-left animation */
+        @keyframes slideLeft {
+            0% { transform: translateX(100%); opacity: 1; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Slide-right animation */
+        @keyframes slideRight {
+            0% { transform: translateX(-100%); opacity: 1; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        .image-gallery {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 0.5s ease-in-out 1s forwards;
+        }
+
+        .collage {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 10px;
+            position: relative;
+            transition: transform 0.5s ease-in-out; /* Smooth transition for slide effect */
+        }
+
+        .collage img {
+            width: 45%;
+            max-width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid white;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 0.5s ease-in-out 1.2s forwards;
+        }
+
+        /* Collage text fade-in */
+        .collage-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            color: #6b4423; /* Chocolate brown */
+            font-style: italic;
+            margin-top: 10px;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 1s ease-in-out 1.4s forwards;
+        }
+
+        /* Chocolate message fade-in */
+        .chocolate-message {
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+            color: #8b5a2b; /* Lighter chocolate brown */
+            font-style: italic;
+            margin-top: 10px;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 1s ease-in-out 1.6s forwards;
+        }
+
+        /* Arrow fade-in */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            color: #6b4423; /* Chocolate brown */
+            z-index: 4;
+            cursor: pointer;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 0.5s ease-in-out 1.8s forwards;
+        }
+
+        /* Left and right arrow positioning */
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        .full-width-section {
+            position: relative;
+            width: 100%;
+            margin-top: 30px;
+            opacity: 0; /* Start with opacity 0 for fade-in animation */
+            animation: fadeIn 0.5s ease-in-out 2s forwards;
+        }
+
+        .full-width-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .full-width-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 36px;
+            }
+            .description, .long-description {
+                font-size: 18px;
+            }
+            .collage {
+                flex-direction: column;
+            }
+            .collage img {
+                width: 100%;
+                height: 100%;
+                max-width: 200px;
+            }
+            .arrow {
+                font-size: 40px;
+            }
+            .full-width-text {
+                font-size: 18px;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="chocolate1 (1).gif" alt="Chocolate Day Image">
+        <h1 class="title">Happy Chocolate Day My Love 🍫</h1>
+        <p class="long-description">🍫 Just like chocolates, you make my life sweeter and more delightful. On this special day, I want to remind you how much you mean to me. You are the sweetness in my life. Happy Chocolate Day, my love! 🍫</p>
+        <audio id="background-music" autoplay loop muted>
+            <source src="song1.mp3" type="audio/mpeg">
+        </audio>
+        
+        <!-- Styled Play/Pause Button -->
+        <button id="play-button" onclick="toggleMusic()">
+            <i id="play-icon" class="fa fa-play"></i>
+        </button>
+        <hr>
+        <!-- Add FontAwesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <div class="image-gallery">
+            <span class="arrow arrow-left" onclick="moveSlide(-1)">&#10094;</span>
+            
+            <div class="collage">
+                <img src="chocolate1.jpg" alt="Chocolate 1" class="chocolate-image slide-in" id="chocolate-img">
+            </div>
+            
+            <span class="arrow arrow-right" onclick="moveSlide(1)">&#10095;</span>
+        </div>
+    
+        <p class="collage-text" id="chocolate-text">Chocolate 1</p>
+        <p class="chocolate-message" id="chocolate-message">Dark Chocolate - Rich and Intense Love 🍫</p>
+    
+    </div>
+    <hr>
+    <div class="full-width-section" style="position: relative; width: 100%; height: auto; overflow: hidden;">
+        <img src="chocolate-hand.png" alt="Beautiful Chocolate" class="full-width-image" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(50%);">
+        <div class="full-width-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white; z-index: 1; padding: 20px; max-width: 90%; background: rgba(0, 0, 0, 0.5); border-radius: 10px;">
+            <h3 style="margin: 0; padding: 10px;">Sweet as Chocolate 🍫</h3>
+            <p style="margin: 0; padding: 10px;">Just like chocolates, our love is sweet, rich, and unforgettable. You are the sweetness in my life. Happy Chocolate Day, my love! 💖</p>
+        </div>
+    </div>
+    <style>
+        .chocolate-piece {
+            position: absolute;
+            top: -50px;
+            width: 30px;
+            height: 30px;
+            background-image: url('love.png'); /* Replace with your chocolate piece image */
+            background-size: cover;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            createChocolateAnimation();
+        });
+
+        function createChocolateAnimation() {
+            const chocolateContainer = document.createElement('div');
+            chocolateContainer.style.position = 'fixed';
+            chocolateContainer.style.top = '0';
+            chocolateContainer.style.left = '0';
+            chocolateContainer.style.width = '100%';
+            chocolateContainer.style.height = '100%';
+            chocolateContainer.style.pointerEvents = 'none';
+            document.body.appendChild(chocolateContainer);
+
+            for (let i = 0; i < 20; i++) {
+                const chocolate = document.createElement('img');
+                chocolate.src = 'love.png'; // Path to your chocolate piece image
+                chocolate.style.position = 'absolute';
+                chocolate.style.top = Math.random() * -50 + 'vh'; // Start slightly above the screen
+                chocolate.style.left = Math.random() * 100 + 'vw';
+                chocolate.style.width = Math.random() * 15 + 10 + 'px'; // Decreased size
+                chocolate.style.height = 'auto'; // Maintain aspect ratio
+                chocolate.style.opacity = Math.random();
+                chocolate.style.animation = 'fall 3s linear infinite'; // 3 seconds animation
+                chocolateContainer.appendChild(chocolate);
+            }
+
+            setTimeout(() => {
+                document.body.removeChild(chocolateContainer);
+            }, 3000); // Remove chocolate pieces after animation completes
+        }
+
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fall {
+                0% {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 1;
+                }
+                100% {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+    <script>
+        function createChocolatePiece() {
+            const chocolate = document.createElement('div');
+            chocolate.classList.add('chocolate-piece');
+            chocolate.style.left = Math.random() * 100 + 'vw';
+            chocolate.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(chocolate);
+
+            setTimeout(() => {
+                chocolate.remove();
+            }, 5000);
+        }
+
+        setInterval(createChocolatePiece, 300);
+    </script>
+    <style>
+        #play-button {
+            background-color: transparent; /* No background */
+            color: #c3b4b4; /* White icon */
+            border: none; /* Remove border */
+            padding: 15px; /* Padding for the button */
+            text-align: center; /* Center-align icon */
+            font-size: 30px; /* Font size for the icon */
+            margin: 10px auto; /* Center button horizontally */
+            cursor: pointer; /* Pointer cursor on hover */
+            border-radius: 50%; /* Rounded button */
+            transition: background-color 0.3s ease; /* Smooth background color transition */
+        }
+    
+        #play-button:hover {
+            background-color: rgba(0, 0, 0, 0.2); /* Light background on hover */
+        }
+    
+        #play-button:focus {
+            outline: none; /* Remove outline on focus */
+        }
+    
+        .fa-play, .fa-pause {
+            font-size: 30px; /* Set icon size */
+        }
+    </style>
+    
+    <script>
+        // Try to play the audio when the page loads
+        window.onload = function() {
+            const audioElement = document.getElementById('background-music');
+    
+            // Try to play the audio
+            audioElement.play().catch(function(error) {
+                // If autoplay fails, display the play button for user interaction
+                console.log('Autoplay failed:', error);
+                document.getElementById('play-button').style.display = 'block'; // Show the button
+            });
+        };
+    
+        // Function to toggle music (play/pause)
+        function toggleMusic() {
+            const audioElement = document.getElementById('background-music');
+            const playIcon = document.getElementById('play-icon');
+            
+            if (audioElement.paused) {
+                audioElement.muted = false; // Unmute the audio
+                audioElement.play();
+                playIcon.classList.remove('fa-play');
+                playIcon.classList.add('fa-pause');
+            } else {
+                audioElement.pause();
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
+            }
+        }
+    </script>
+    <script>
+        const chocolates = [
+    { 
+        image: 'cho-col (1).jpg', 
+        text: 'KitKat - Break Time, Love Time 🍫', 
+        message: 'Just like a KitKat break, you are my perfect pause in a busy life. Every moment with you is sweet and cherished!' 
+    },
+    { 
+        image: 'cho-col (2).jpg', 
+        text: 'Dairy Milk - Smooth and Everlasting 💖', 
+        message: 'Dairy Milk melts smoothly, just like my heart when I think of you. Our love is sweet, comforting, and never-ending!' 
+    },
+    { 
+        image: 'cho-col (3).jpg', 
+        text: 'Snickers - Energy and Excitement 🤎', 
+        message: 'Snickers gives instant energy, just like you fill my life with excitement and happiness. With you, every moment is full of joy!' 
+    },
+    { 
+        image: 'cho-col (5).jpg', 
+        text: 'Fantastic Almond Chocolate - Rich and Nutty Love 🌰', 
+        message: 'Just like almonds add crunch to chocolate, you add excitement and depth to my life. My love for you is strong and everlasting!' 
+    },
+    { 
+        image: 'cho-col (7).jpg', 
+        text: 'Perk Chocolate - Fun and Lively Love 🎉', 
+        message: 'Perk is all about fun and crunch! Being with you makes every moment exciting and joyful. You are my sweet adventure!' 
+    },
+    { 
+        image: 'cho-col (4).jpg', 
+        text: 'Milkybar - Pure and Innocent Love 🤍', 
+        message: 'Milkybar represents purity and innocence, just like our love. Simple, sweet, and forever true!' 
+    },
+    { 
+        image: 'cho-col (6).jpg', 
+        text: '5 Star - Sticky and Everlasting Bond 🌟', 
+        message: '5 Star is sticky and delicious, just like our bond that never breaks. Our love is rich, lasting, and full of surprises!' 
+    }
+];
+
+
+        let currentIndex = 0;
+
+        function updateGallery() {
+            const chocolateImg = document.getElementById("chocolate-img");
+            const chocolateText = document.getElementById("chocolate-text");
+            const chocolateMessage = document.getElementById("chocolate-message");
+
+            // Slide out animation
+            chocolateImg.classList.remove("slide-in");
+            chocolateImg.classList.add("slide-out");
+
+            setTimeout(() => {
+                chocolateImg.src = chocolates[currentIndex].image;
+                chocolateText.textContent = chocolates[currentIndex].text;
+                chocolateMessage.textContent = chocolates[currentIndex].message;
+
+                // Slide in animation
+                chocolateImg.classList.remove("slide-out");
+                chocolateImg.classList.add("slide-in");
+            }, 500); // Match the duration of slide-out animation
+        }
+
+        function moveSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = chocolates.length - 1;
+            }
+            if (currentIndex >= chocolates.length) {
+                currentIndex = 0;
+            }
+            updateGallery();
+        }
+
+        updateGallery();
+    </script>
+    <button id="show-message-button" style="margin-top: 20px; padding: 10px 20px; font-size: 18px; cursor: pointer;">See the Special Message</button>
+    <style>
+        #show-message-button {
+            background-color: #6b4423; /* Chocolate brown */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #show-message-button:hover {
+            background-color: #8b5a2b; /* Lighter chocolate brown */
+            transform: scale(1.05);
+        }
+
+        #show-message-button:focus {
+            outline: none;
+        }
+    </style>
+    <div id="special-message-section" style="display: none; margin-top: 20px;">
+        <div class="letter" id="letter">
+            Loading...
+        </div>
+        <div style="margin-top: 20px;">
+            <input type="text" id="user-name" placeholder="Your Name" style="padding: 10px; font-size: 16px; width: 80%; margin-bottom: 10px;">
+            <textarea id="user-message" placeholder="Your Message" style="padding: 10px; font-size: 16px; width: 80%; height: 100px;"></textarea>
+            <button id="send-message-button" style="padding: 10px 20px; font-size: 18px; cursor: pointer; background-color: #6b4423; color: white; border: none; border-radius: 5px; transition: background-color 0.3s ease;">Send</button>
+        </div>
+    </div>
+    <style>
+        body {
+            font-family: 'Dancing Script', cursive;
+            text-align: center;
+            background-color: #ffe6e6;
+            padding: 2px;
+        }
+        .letter {
+            font-size: 30px;
+            color: #6b0f1a;
+            background: white;
+            padding: 0px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+        .choco {
+            height: 80px; /* Increased size */
+            vertical-align: middle;
+            margin: 0 5px;
+        }
+    </style>
+    
+    <script>
+        document.getElementById('show-message-button').addEventListener('click', function() {
+            const messageSection = document.getElementById('special-message-section');
+            if (messageSection.style.display === 'block') {
+                messageSection.style.display = 'none';
+                this.textContent = 'View Message';
+            } else {
+                messageSection.style.display = 'block';
+                this.textContent = 'Close Message';
+            }
+        });
+    
+        document.getElementById('send-message-button').addEventListener('click', function() {
+            const userName = document.getElementById('user-name').value;
+            const userMessage = document.getElementById('user-message').value;
+            if (userName && userMessage) {
+                const messageDisplay = document.createElement('p');
+                messageDisplay.textContent = `${userName}'s Message: ${userMessage}`;
+                document.body.appendChild(messageDisplay);
+                document.getElementById('special-message-section').style.display = 'none';
+                document.getElementById('show-message-button').textContent = 'View Message';
+            } else {
+                alert('Please enter both your name and message.');
+            }
+        });
+    
+         const letterText = `My Sweetest Love, ❤️🍫 Happy Chocolate Day, my love! You are my Dairy Milk Silk, smooth and comforting, wrapping me in the warmth of your embrace. Just like a 5 Star, you shine the brightest in my life, making every moment feel luxurious and special. Life with you is like a Perk, full of energy, excitement, and happiness. Whenever I feel down, you are my KitKat, the perfect break that refreshes my soul. Your love is as pure as Milkybar, innocent and full of sweetness, yet as deep and intense as Bournville, making my heart race with every moment spent with you. With you, life is a perfect blend of Snickers and Mars, a combination of fun, adventure, and irresistible charm. You are my Temptation, pulling me closer with every smile, and my Chocopie, always filling my life with warmth and love. Our love is like Toblerone, unique, precious, and unforgettable. You are my Bar One, the one and only, and my Munch, my little bite of happiness every single day. Just like Eclairs, your love melts my heart, leaving behind a sweetness I never want to fade. Every time I see you, my heart beats like an unwrapped Ferrero Rocher, excited and filled with golden love. With you, life is a delightful mix of Crunch, Perk, and Gems, full of surprises, energy, and colorful moments. You are my Almond Joy, my Park Chocolate, and my forever Melody, filling my life with the most beautiful music of love. You make my life feel like an endless Celebration, a festival of happiness where every moment is as special as biting into a Cadbury Fuse—unexpected, exciting, and rich with love. Just like Hershey’s Kisses, every kiss from you is a little piece of heaven, and every hug feels like a warm Hot Chocolate, comforting and irresistible. On this special day, I want you to know that my love for you is more Fantastic Almond Chocolate than you can imagine—rich, nutty, and full of passion. You are my Bounty, my treasure, and my sweetest dream come true. I promise to always be your Bar One, your 5 Star, and your forever Dairy Milk Silk. Forever and Always Yours, <i>"Comrade"</i> ❤️🍫`;
+    
+        const chocolateImages = {
+            "Dairy Milk Silk": "silk.jpg",
+            "5 Star": "5star.jpg",
+            "Perk": "perk.jpg",
+            "KitKat": "kitkat.jpg",
+            "Milkybar": "milkybar.jpg",
+            "Bournville": "bournville.jpg",
+            "Snickers": "snickers.jpg",
+            "Mars": "mars.jpg",
+            "Temptation": "temptation.jpg",
+            "Chocopie": "chocopie.jpg",
+            "Toblerone": "toblerone.jpg",
+            "Bar One": "barone.jpeg",
+            "Munch": "munch.jpg",
+            "Eclairs": "eclairs.jpg",
+            "Ferrero Rocher": "ferrero.png",
+            "Crunch": "crunch.png",
+            "Gems": "gems.jpg",
+            "Almond Joy": "almondjoy.jpg",
+            "Park Chocolate": "perk.jpg",
+            "Melody": "melody.jpg",
+            "Celebration": "celebration.png",
+            "Cadbury Fuse": "fuse.png",
+            "Hershey’s Kisses": "hersheys.jpg",
+            "Fantastic Almond Chocolate": "fantastic.jpg",
+            "Bounty": "bounty.jpg"
+        };
+    
+        let formattedLetter = letterText;
+        for (const choco in chocolateImages) {
+            const imgTag = `<img src="${chocolateImages[choco]}" class="choco" alt="">`;
+            formattedLetter = formattedLetter.replace(new RegExp(choco, "g"), imgTag);
+        }
+        document.getElementById("letter").innerHTML = formattedLetter;
+    
+    </script>
+    <button id="propose-day-button" style="margin-top: 20px; padding: 10px 20px; font-size: 18px; cursor: pointer;">Go to Propose Day</button>
+    <style>
+        #propose-day-button {
+            background-color: #c22751; /* Chocolate brown */
+            color: white;
+            border: none;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        #propose-day-button:hover {
+            background-color: #73192d; /* Lighter chocolate brown */
+            transform: scale(1.05);
+        }
+
+        #propose-day-button:focus {
+            outline: none;
+        }
+
+        @media (max-width: 768px) {
+            #propose-day-button {
+                padding: 8px 16px; /* Decrease padding */
+                font-size: 16px; /* Decrease font size */
+            }
+        }
+    </style>
+    <script>
+        document.getElementById('propose-day-button').addEventListener('click', function() {
+            window.location.href = 'proposeday.html';
+        });
+    </script>
+    <footer style="background-color: #6b4423; color: white; text-align: center; padding: 10px 0; font-family: 'Dancing Script', cursive; font-size: 18px; margin-top: 20px;">
+        Design and developed by Gouranga Pal ❤️
+    </footer>
+</body>
+</html>
