@@ -28,7 +28,15 @@
             perspective: 1200px;
         }
 
-        
+        .hanging-plants {
+            position: absolute;
+            top: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 80px;
+            background: url('https://i.imgur.com/6YQKiHo.png') center/cover no-repeat;
+        }
 
         .calendar {
             position: absolute;
@@ -311,15 +319,35 @@
         function proceed() {
             alert("Proceeding to the next step...");
         }
-    
-        function newAction() {
+    function newAction() {
         const displayedDate = parseInt(document.getElementById("date").innerText);  // Get the calendar's displayed date
-        if (displayedDate === 7) {
-            window.location.href = "roseday.html";  // Redirect to roseday.html when the calendar date is 7
-        } else if (displayedDate === 8) {
-            window.location.href = "proposeday.html";  // Redirect to proposeday.html when the calendar date is 8
-        } else {
-            alert("New button clicked! The calendar date is not 7 or 8.");
+        switch (displayedDate) {
+            case 7:
+                window.location.href = "roseday.html";  // Redirect to roseday.html when the calendar date is 7
+                break;
+            case 8:
+                window.location.href = "proposeday.html";  // Redirect to proposeday.html when the calendar date is 8
+                break;
+            case 9:
+                window.location.href = "chocolateday.html";  // Redirect to chocolateday.html when the calendar date is 9
+                break;
+            case 10:
+                window.location.href = "teddyday.html";  // Redirect to teddyday.html when the calendar date is 10
+                break;
+            case 11:
+                window.location.href = "promiseday.html";  // Redirect to promiseday.html when the calendar date is 11
+                break;
+            case 12:
+                window.location.href = "hugday.html";  // Redirect to hugday.html when the calendar date is 12
+                break;
+            case 13:
+                window.location.href = "kissday.html";  // Redirect to kissday.html when the calendar date is 13
+                break;
+            case 14:
+                window.location.href = "valentinesday.html";  // Redirect to valentinesday.html when the calendar date is 14
+                break;
+            default:
+                alert("New button clicked! The calendar date is not between 7 and 14.");
         }
     }
     
