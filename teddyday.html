@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Teddy Day</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        html, body {
+    background-color: rgb(255, 255, 255);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    opacity: 0; /* Start with opacity 0 for fade-in animation */
+    animation: fadeIn 0.5s ease-in-out forwards;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: scroll; /* Enable vertical scrolling but hide scrollbar */
+}
+
+/* Hide scrollbar for all browsers */
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    -ms-overflow-style: none;  /* Hide scrollbar for IE & Edge */
+    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background-color: #ff6f61;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out 0.2s forwards;
+        }
+
+        .container img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out 0.4s forwards;
+        }
+
+        .title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 48px;
+            color: #ff6f61;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out 0.6s forwards;
+        }
+
+        .long-description {
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+            font-style: italic;
+            color: #0e8d86;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out 0.8s forwards;
+        }
+
+        .image-gallery {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out 1s forwards;
+        }
+
+        .collage {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+            padding: 10px;
+            position: relative;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .collage img {
+            width: 45%;
+            max-width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid white;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out 0.2s forwards;
+        }
+
+        .collage-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            color: #ac075a;
+            font-style: italic;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 1.4s forwards;
+        }
+
+        .propose-message {
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+            color: #ff69b4;
+            font-style: italic;
+            margin-top: 10px;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out 1.6s forwards;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            color: #ff1493;
+            z-index: 4;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeIn 0.1s ease-in-out 0.2s forwards;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        .full-width-section {
+            position: relative;
+            width: 100%;
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeIn 0.1s ease-in-out 0.2s forwards;
+        }
+
+        .full-width-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .full-width-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 36px;
+            }
+            .description, .long-description {
+                font-size: 18px;
+            }
+            .collage {
+                flex-direction: column;
+            }
+            .collage img {
+                width: 100%;
+                height: 100%;
+                max-width: 200px;
+            }
+            .arrow {
+                font-size: 40px;
+            }
+            .full-width-text {
+                font-size: 12px;
+                width: 90%;
+            }
+        }
+
+        #play-button {
+            background-color: transparent;
+            color: #c3b4b4;
+            border: none;
+            padding: 15px;
+            font-size: 30px;
+            margin: 10px auto;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        #play-button:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .fa-play, .fa-pause {
+            font-size: 30px;
+        }
+
+        .proposal-button {
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            color: white;
+            background-color: #ff6f61;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .proposal-button:hover {
+            background-color: #ff1443;
+            transform: scale(1.1);
+        }
+
+        .view-secret-button {
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+            color: white;
+            background-color: #65024f;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .view-secret-button:hover {
+            background-color: #ff1443;
+            transform: scale(1.1);
+        }
+
+        .rose-day-button {
+            font-family: 'Dancing Script', cursive;
+            font-size: 18px;
+            color: white;
+            background: linear-gradient(45deg, #654dff, #1499ff);
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .rose-day-button:hover {
+            background: linear-gradient(45deg, #ff1443, #ff4d6d);
+            transform: scale(1.1);
+        }
+
+        footer {
+            background-color: #ff6f61;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-family: 'Dancing Script', cursive;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>4th Day Of The Valentines Week</li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <img src="teddy (1).webp" alt="Teddy Day Image">
+        <h1 class="title">Happy Teddy Day My Love 🧸</h1>
+        <p class="long-description">🧸 On this special day, I gift you this teddy as a symbol of my love and care. Just like this teddy, I will always be there to hug you and make you feel loved. 🧸</p>
+        <audio id="background-music" autoplay loop muted>
+            <source src="song1.mp3" type="audio/mpeg">
+        </audio>
+        <button id="play-button" onclick="toggleMusic()">
+            <i id="play-icon" class="fa fa-play"></i>
+        </button>
+        <hr>
+
+        <div class="image-gallery">
+            <span class="arrow arrow-left" onclick="moveSlide(-1)">&#10094;</span>
+            <div class="collage">
+                <img src="teddy1.jpg" alt="Teddy 1" class="teddy-image slide-in" id="teddy-img">
+            </div>
+            <span class="arrow arrow-right" onclick="moveSlide(1)">&#10095;</span>
+        </div>
+
+        <p class="collage-text" id="teddy-text">Teddy 1</p>
+        <p class="propose-message" id="teddy-message">A Cuddly Companion for Life 🧸</p>
+        <hr>
+    </div>
+
+    <div class="full-width-section">
+        <img src="teddy (1).gif" alt="Teddy Love" class="full-width-image">
+        <div class="full-width-text">
+            <h3>Will You Be My Teddy Bear? 🧸</h3>
+            <hr>
+            <p>Just like this teddy, I promise to be your constant companion, always there to comfort and love you. 🧸</p>
+        </div>
+    </div>
+
+    <div class="proposal-section" style="text-align: center; margin-top: 30px;">
+        <img src="teddy (2).gif" alt="Teddy GIF" style="width: 100%; max-width: 300px; height: auto; margin-bottom: 20px;">
+        <h2 style="font-family: 'Great Vibes', cursive; font-size: 36px; color: #ff6f61;">Will you be my teddy bear?</h2>
+        <button class="proposal-button" onclick="playMusic()">Yes</button>
+        <button class="proposal-button" onclick="playMusic()">Absolutely Yes</button>
+    </div>
+
+    <div class="secret-message-section" style="text-align: center; margin-top: 30px;">
+        <p id="secret-message" style="filter: blur(5px); font-family: 'Dancing Script', cursive; font-size: 24px; color: #ff6f61;">
+            G's Message: I Love You ❤️
+        </p>
+        <button class="view-secret-button" onclick="showPasswordPrompt()">View Secret Message</button>
+        <div id="password-input-section" style="display: none; margin-top: 20px;">
+            <p style="font-family: 'Dancing Script', cursive; font-size: 20px; color: #ff6f61;">
+                Hint: Your nickname given by your comrade
+            </p>
+            <input type="password" id="password-input" placeholder="Enter password" 
+                style="font-family: 'Dancing Script', cursive; font-size: 20px; padding: 10px; border-radius: 5px; border: 1px solid #ff6f61;">
+            <button class="view-secret-button" onclick="checkPassword()">Submit</button>
+        </div>
+        <div id="user-message-section" style="display: none; margin-top: 20px;">
+            <input type="text" id="user-message" placeholder="Enter your message" 
+                style="font-family: 'Dancing Script', cursive; font-size: 20px; padding: 10px; border-radius: 5px; border: 1px solid #ff6f61;">
+            <button class="view-secret-button" onclick="submitMessage()">Submit</button>
+        </div>
+        <p id="display-user-message" style="font-family: 'Dancing Script', cursive; font-size: 24px; color: #ff6f61; margin-top: 20px;"></p>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <button class="rose-day-button" onclick="window.location.href='roseday.html'">Go to ROSE Day🌹</button>
+    </div>
+
+    <footer>
+        Design and developed by Gouranga Pal ❤️
+    </footer>
+
+    <script>
+        // Music toggle function
+        function toggleMusic() {
+            const audioElement = document.getElementById('background-music');
+            const playIcon = document.getElementById('play-icon');
+            if (audioElement.paused) {
+                audioElement.muted = false;
+                audioElement.play();
+                playIcon.classList.remove('fa-play');
+                playIcon.classList.add('fa-pause');
+            } else {
+                audioElement.pause();
+                playIcon.classList.remove('fa-pause');
+                playIcon.classList.add('fa-play');
+            }
+        }
+
+        // Image gallery functionality
+        const teddies = [
+            { image: 'img (4).jpg', text: 'A Cuddly Companion for Life 🧸', message: 'This teddy represents my love and care for you. I will always be there to hug you and make you feel loved.' },
+            { image: 'img (3).jpg', text: 'A Soft Hug for You 🧸', message: 'Just like this teddy, I promise to be your constant companion, always there to comfort and love you.' },
+            { image: 'img (2).jpg', text: 'A Token of My Love 🧸', message: 'This teddy is a symbol of my love for you. I will always be your teddy bear, ready to hug you whenever you need.' },
+        ];
+
+        let currentIndex = 0;
+
+        function updateGallery() {
+            const teddyImg = document.getElementById("teddy-img");
+            const teddyText = document.getElementById("teddy-text");
+            const teddyMessage = document.getElementById("teddy-message");
+
+            teddyImg.classList.remove("slide-in");
+            teddyImg.classList.add("slide-out");
+
+            setTimeout(() => {
+                teddyImg.src = teddies[currentIndex].image;
+                teddyText.textContent = teddies[currentIndex].text;
+                teddyMessage.textContent = teddies[currentIndex].message;
+
+                teddyImg.classList.remove("slide-out");
+                teddyImg.classList.add("slide-in");
+            }, 500);
+        }
+
+        function moveSlide(direction) {
+            currentIndex += direction;
+            if (currentIndex < 0) {
+                currentIndex = teddies.length - 1;
+            }
+            if (currentIndex >= teddies.length) {
+                currentIndex = 0;
+            }
+            updateGallery();
+        }
+
+        updateGallery();
+
+        // Secret message functionality
+        function showPasswordPrompt() {
+            document.getElementById("password-input-section").style.display = "block";
+        }
+
+        function checkPassword() {
+            const password = document.getElementById("password-input").value;
+            if (password === "sonu") {
+                document.getElementById("secret-message").style.filter = "none";
+                document.getElementById("password-input-section").style.display = "none";
+                document.getElementById("user-message-section").style.display = "block";
+            } else {
+                alert("Invalid password");
+            }
+        }
+
+        function submitMessage() {
+            const userMessage = document.getElementById("user-message").value;
+            if (userMessage.trim() !== "") {
+                document.getElementById("display-user-message").textContent = "S's Message: " + userMessage;
+                document.getElementById("user-message").value = "";
+            } else {
+                alert("Please enter a message");
+            }
+        }
+    </script>
+</body>
+</html>
